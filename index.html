@@ -1,0 +1,510 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Osman Mohamed | IT Support & Cybersecurity</title>
+  <meta name="description" content="Osman Mohamed — IT Support Specialist & Cybersecurity Student (WGU). Certifications, projects, and progress." />
+
+  <style>
+    :root{
+      --bg:#0b1220;
+      --text:#e7eefc;
+      --muted:#a8b3cf;
+      --accent:#22d3ee;
+      --border:rgba(255,255,255,.10);
+      --shadow: 0 12px 30px rgba(0,0,0,.35);
+      --card: rgba(15,23,42,.72);
+      --nav: rgba(11,18,32,.60);
+    }
+
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial;
+      background:
+        radial-gradient(1200px 600px at 18% 0%, rgba(34,211,238,.18), transparent 60%),
+        radial-gradient(900px 500px at 88% 10%, rgba(168,85,247,.14), transparent 60%),
+        var(--bg);
+      color:var(--text);
+      line-height:1.6;
+    }
+
+    a{color:var(--accent); text-decoration:none}
+    a:hover{text-decoration:underline}
+    .wrap{max-width:1040px; margin:0 auto; padding:0 22px}
+
+    /* NAV */
+    nav{
+      position:sticky; top:0; z-index:50;
+      backdrop-filter: blur(10px);
+      background: var(--nav);
+      border-bottom:1px solid var(--border);
+    }
+    .nav-inner{
+      display:flex; align-items:center; justify-content:space-between;
+      padding:14px 0;
+      gap:16px;
+    }
+    .brand{font-weight:900; letter-spacing:.2px}
+    .links{
+      display:flex; flex-wrap:wrap; justify-content:flex-end;
+      gap:14px;
+    }
+    .links a{
+      color:var(--text);
+      font-weight:700;
+      font-size:13px;
+      opacity:.92;
+      padding:6px 8px;
+      border-radius:10px;
+      border:1px solid transparent;
+    }
+    .links a:hover{
+      text-decoration:none;
+      border-color: var(--border);
+      background: rgba(17,26,46,.40);
+    }
+
+    /* HERO */
+    header.hero{padding:84px 0 40px}
+    .badge{
+      display:inline-flex; gap:8px; align-items:center;
+      padding:7px 12px;
+      border:1px solid var(--border);
+      background: rgba(17,26,46,.65);
+      border-radius:999px;
+      color:var(--muted);
+      font-size:13px;
+    }
+    h1{
+      font-size:54px; line-height:1.05;
+      margin:18px 0 14px;
+      letter-spacing:-.9px;
+    }
+    .sub{
+      max-width:760px;
+      color:var(--muted);
+      font-size:18px;
+      margin:0 0 22px;
+    }
+    .hero-container{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:40px;
+      flex-wrap:wrap;
+    }
+    .hero-text{flex:1; min-width:320px}
+    .hero-image{flex:1; text-align:center; min-width:280px}
+    .hero-image img{
+      width: 320px;
+      max-width: 92vw;
+      border-radius: 16px;
+      border: 1px solid var(--border);
+      box-shadow: 0 20px 45px rgba(0,0,0,0.45);
+      background: rgba(255,255,255,.02);
+    }
+
+    /* BUTTONS */
+    .cta{display:flex; gap:12px; flex-wrap:wrap}
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center;
+      padding:11px 14px;
+      border-radius:12px;
+      border:1px solid var(--border);
+      background: rgba(17,26,46,.75);
+      color:var(--text);
+      font-weight:900;
+      font-size:14px;
+      box-shadow: var(--shadow);
+      transition: transform .08s ease;
+    }
+    .btn:hover{transform: translateY(-1px); text-decoration:none}
+    .btn.primary{
+      background: linear-gradient(135deg, rgba(34,211,238,.92), rgba(168,85,247,.70));
+      border:none;
+      color:#06101c;
+    }
+
+    /* SECTIONS */
+    section{padding:44px 0}
+    .section-title{
+      display:flex; align-items:baseline; justify-content:space-between;
+      gap:10px; margin-bottom:14px;
+    }
+    .section-title h2{margin:0; font-size:26px}
+    .section-title p{margin:0; color:var(--muted); font-size:14px}
+
+    .grid{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap:16px;
+    }
+
+    .card{
+      background: var(--card);
+      border:1px solid var(--border);
+      border-radius:16px;
+      padding:18px;
+      box-shadow: var(--shadow);
+    }
+    .card h3{margin:0 0 6px; font-size:18px}
+    .meta{color:var(--muted); font-size:13px; margin:0 0 10px}
+    .pillrow{display:flex; flex-wrap:wrap; gap:8px; margin-top:10px}
+    .pill{
+      font-size:12px;
+      color:var(--muted);
+      border:1px solid var(--border);
+      padding:4px 10px;
+      border-radius:999px;
+      background: rgba(17,26,46,.55);
+    }
+    ul.clean{margin:0; padding-left:18px; color:var(--muted)}
+    ul.clean li{margin:6px 0}
+    .divider{height:1px; background: var(--border); margin: 18px 0}
+
+    /* CERT LIST */
+    .cert-grid{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap:16px;
+    }
+    .cert-list{
+      list-style:none;
+      margin:0;
+      padding:0;
+      display:flex;
+      flex-direction:column;
+      gap:10px;
+    }
+    .cert-item{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:12px;
+      padding:10px 12px;
+      border:1px solid var(--border);
+      border-radius:12px;
+      background: rgba(17,26,46,.35);
+    }
+    .cert-name{
+      font-weight:800;
+      font-size:14px;
+      color:var(--text);
+    }
+    .cert-btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      padding:8px 10px;
+      border-radius:10px;
+      border:1px solid var(--border);
+      background: rgba(17,26,46,.70);
+      color: var(--text);
+      font-weight:900;
+      font-size:12px;
+      text-decoration:none;
+      white-space:nowrap;
+    }
+    .cert-btn:hover{text-decoration:none; transform:translateY(-1px)}
+
+    /* FOOTER */
+    footer{
+      border-top:1px solid var(--border);
+      padding:26px 0 40px;
+      color:var(--muted);
+      font-size:13px;
+    }
+
+    @media (max-width: 860px){
+      h1{font-size:40px}
+      .grid{grid-template-columns:1fr}
+      .cert-grid{grid-template-columns:1fr}
+      .links{display:none}
+      .hero-container{flex-direction:column; text-align:center}
+      .cta{justify-content:center}
+    }
+  </style>
+</head>
+
+<body>
+  <nav>
+    <div class="wrap nav-inner">
+      <div class="brand">Osman Mohamed</div>
+      <div class="links">
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#certs">Certificates</a>
+        <a href="#progress">WGU Progress</a>
+        <a href="#writing">Writing</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <div class="wrap hero-container">
+      <div class="hero-text">
+        <div class="badge">IT Support • Cybersecurity Student (WGU) • Labs + Documentation</div>
+        <h1>IT Support Specialist<br/>with a Security Focus.</h1>
+        <p class="sub">
+          Entry-level IT professional with customer-facing troubleshooting experience and hands-on work with Windows environments,
+          Active Directory, Office 365, ticketing workflows, and log analysis—building toward a cybersecurity analyst role.
+        </p>
+
+        <div class="cta">
+          <a class="btn primary" href="assets/OsmanMohamed_HD.pdf" target="_blank" rel="noopener">IT Resume (PDF)</a>
+          <a class="btn" href="assets/OsmanMohamed_CS.pdf" target="_blank" rel="noopener">Cyber Resume (PDF)</a>
+          <a class="btn" href="https://github.com/Analyst122" target="_blank" rel="noopener">GitHub</a>
+          <a class="btn" href="https://medium.com/@osmanmusahamed" target="_blank" rel="noopener">Medium</a>
+        </div>
+      </div>
+
+      <div class="hero-image">
+        <img src="assets/osman.jpg" alt="Osman Mohamed headshot" />
+      </div>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <!-- ABOUT -->
+    <section id="about">
+      <div class="section-title">
+        <h2>About</h2>
+        <p>Help Desk now → Security next</p>
+      </div>
+      <div class="card">
+        <p style="margin:0;color:var(--muted)">
+          I’m pursuing a B.S. in Cybersecurity and Information Assurance at WGU. My short-term goal is an IT Support / Help Desk role
+          where I can sharpen real-world troubleshooting. In parallel, I’m building security projects in my home lab and documenting
+          what I learn through writeups and hands-on practice.
+        </p>
+        <div class="pillrow">
+          <span class="pill">Windows 10/11</span>
+          <span class="pill">Linux</span>
+          <span class="pill">Active Directory</span>
+          <span class="pill">Office 365</span>
+          <span class="pill">Ticketing</span>
+          <span class="pill">Splunk</span>
+          <span class="pill">Sysmon</span>
+          <span class="pill">Log Analysis</span>
+          <span class="pill">Basic Networking</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects">
+      <div class="section-title">
+        <h2>Projects</h2>
+        <p>Hands-on labs + documentation</p>
+      </div>
+
+      <div class="grid">
+        <article class="card">
+          <h3>Windows Server 2022 • Active Directory Home Lab</h3>
+          <p class="meta">Domain Controller • OUs/Users/Groups • Access Control</p>
+          <p style="margin:0;color:var(--muted)">
+            Built a domain environment to simulate an enterprise setup and practiced user/group management and permissions.
+          </p>
+          <div class="pillrow">
+            <span class="pill">Domain Services</span>
+            <span class="pill">OUs</span>
+            <span class="pill">Groups/Users</span>
+            <span class="pill">Permissions</span>
+          </div>
+        </article>
+
+        <article class="card">
+          <h3>Sysmon + Windows Event Logging</h3>
+          <p class="meta">Endpoint Telemetry • Investigation Basics</p>
+          <p style="margin:0;color:var(--muted)">
+            Configured Sysmon on Windows 10 and Windows Server to enhance telemetry and improve visibility for analysis.
+          </p>
+          <div class="pillrow">
+            <span class="pill">Sysmon</span>
+            <span class="pill">Windows Logs</span>
+            <span class="pill">Telemetry</span>
+          </div>
+        </article>
+
+        <article class="card">
+          <h3>Splunk Log Collection (Universal Forwarder)</h3>
+          <p class="meta">Windows → Ubuntu Server • Centralized Logs</p>
+          <p style="margin:0;color:var(--muted)">
+            Set up log forwarding and built a centralized place to search and analyze events.
+          </p>
+          <div class="pillrow">
+            <span class="pill">Splunk UF</span>
+            <span class="pill">Ubuntu</span>
+            <span class="pill">Ingestion</span>
+          </div>
+        </article>
+
+        <article class="card">
+          <h3>Authentication Monitoring in Splunk</h3>
+          <p class="meta">Successful vs Failed Logins • Detection Thinking</p>
+          <p style="margin:0;color:var(--muted)">
+            Generated and analyzed authentication events, learning how to recognize suspicious patterns and triage activity.
+          </p>
+          <div class="pillrow">
+            <span class="pill">Auth Events</span>
+            <span class="pill">Failed Logins</span>
+            <span class="pill">Triage</span>
+          </div>
+          <div class="divider"></div>
+          <p style="margin:0">
+            <a href="https://medium.com/@osmanmusahamed" target="_blank" rel="noopener">Related writeups on Medium →</a>
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <!-- CERTIFICATES -->
+    <section id="certs">
+      <div class="section-title">
+        <h2>Certificates</h2>
+        <p>PDF proof (opens in a new tab)</p>
+      </div>
+
+      <div class="cert-grid">
+        <div class="card">
+          <h3>🛡️ Security</h3>
+          <ul class="cert-list">
+            <li class="cert-item">
+              <span class="cert-name">ISC2 Certified in Cybersecurity (CC)</span>
+              <a class="cert-btn" href="assets/certs/isc2-cc.pdf" target="_blank" rel="noopener">View PDF</a>
+            </li>
+            <li class="cert-item">
+              <span class="cert-name">CompTIA Security+</span>
+              <a class="cert-btn" href="assets/certs/comptia-security-plus.pdf" target="_blank" rel="noopener">View PDF</a>
+            </li>
+            <li class="cert-item">
+              <span class="cert-name">CompTIA CySA+</span>
+              <a class="cert-btn" href="assets/certs/comptia-cysa-plus.pdf" target="_blank" rel="noopener">View PDF</a>
+            </li>
+            <li class="cert-item">
+              <span class="cert-name">CompTIA PenTest+</span>
+              <a class="cert-btn" href="assets/certs/comptia-pentest-plus.pdf" target="_blank" rel="noopener">View PDF</a>
+            </li>
+            <li class="cert-item">
+              <span class="cert-name">CompTIA SecurityX (CAS-004)</span>
+              <a class="cert-btn" href="assets/certs/comptia-securityx.pdf" target="_blank" rel="noopener">View PDF</a>
+            </li>
+            <li class="cert-item">
+              <span class="cert-name">eCIR (Incident Responder)</span>
+              <a class="cert-btn" href="assets/certs/ecir.pdf" target="_blank" rel="noopener">View PDF</a>
+            </li>
+            <li class="cert-item">
+              <span class="cert-name">eCTHP (Threat Hunting)</span>
+              <a class="cert-btn" href="assets/certs/ecthp.pdf" target="_blank" rel="noopener">View PDF</a>
+            </li>
+            <li class="cert-item">
+              <span class="cert-name">TryHackMe SAL1</span>
+              <a class="cert-btn" href="assets/certs/tryhackme-sal1.pdf" target="_blank" rel="noopener">View PDF</a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h3>💻 IT & Infrastructure</h3>
+          <ul class="cert-list">
+            <li class="cert-item">
+              <span class="cert-name">CompTIA A+</span>
+              <a class="cert-btn" href="assets/certs/comptia-a-plus.pdf" target="_blank" rel="noopener">View PDF</a>
+            </li>
+            <li class="cert-item">
+              <span class="cert-name">CompTIA Network+</span>
+              <a class="cert-btn" href="assets/certs/comptia-network-plus.pdf" target="_blank" rel="noopener">View PDF</a>
+            </li>
+            <li class="cert-item">
+              <span class="cert-name">CompTIA Linux+</span>
+              <a class="cert-btn" href="assets/certs/comptia-linux-plus.pdf" target="_blank" rel="noopener">View PDF</a>
+            </li>
+            <li class="cert-item">
+              <span class="cert-name">CompTIA Data+</span>
+              <a class="cert-btn" href="assets/certs/comptia-data-plus.pdf" target="_blank" rel="noopener">View PDF</a>
+            </li>
+            <li class="cert-item">
+              <span class="cert-name">ITIL Foundation</span>
+              <a class="cert-btn" href="assets/certs/itil-foundation.pdf" target="_blank" rel="noopener">View PDF</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- WGU PROGRESS -->
+    <section id="progress">
+      <div class="section-title">
+        <h2>WGU Progress</h2>
+        <p>Quick updates</p>
+      </div>
+
+      <div class="grid">
+        <div class="card">
+          <h3>Start Date</h3>
+          <p class="meta">April 1</p>
+          <p style="margin:0;color:var(--muted)">
+            I’ll post weekly updates: what I studied, what I built, and what I improved.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>Current Focus</h3>
+          <p class="meta">IT Support foundations + Security operations basics</p>
+          <p style="margin:0;color:var(--muted)">
+            Troubleshooting workflows, Windows administration, and security monitoring fundamentals (logs, triage).
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- WRITING -->
+    <section id="writing">
+      <div class="section-title">
+        <h2>Writing</h2>
+        <p>Labs + learning notes</p>
+      </div>
+
+      <div class="card">
+        <p style="margin:0;color:var(--muted)">
+          I publish learning writeups and lab notes on Medium.
+        </p>
+        <p style="margin:12px 0 0">
+          <a href="https://medium.com/@osmanmusahamed" target="_blank" rel="noopener">Visit my Medium profile →</a>
+        </p>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact">
+      <div class="section-title">
+        <h2>Contact</h2>
+        <p>Easy way to reach me</p>
+      </div>
+
+      <div class="card">
+        <p style="margin:0;color:var(--muted)">
+          Email: <a href="mailto:osmanmusahamed@gmail.com">osmanmusahamed@gmail.com</a><br/>
+          GitHub: <a href="https://github.com/Analyst122" target="_blank" rel="noopener">Analyst122</a><br/>
+          Medium: <a href="https://medium.com/@osmanmusahamed" target="_blank" rel="noopener">@osmanmusahamed</a>
+        </p>
+      </div>
+    </section>
+
+    <footer>
+      <div class="wrap">
+        © <span id="y"></span> Osman Mohamed • Built with GitHub Pages
+      </div>
+    </footer>
+  </main>
+
+  <script>
+    document.getElementById("y").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
